@@ -58,6 +58,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False, verbose_name=gtl('Is Staff'))
 
     USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['first_name']
 
     objects = UserManager()
 
