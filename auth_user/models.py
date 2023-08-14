@@ -21,13 +21,13 @@ class UserManager(BaseUserManager):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_active', True)
         username_field = username_field.lower()
-        return self._create_user(username_field, password, **extra_fields)
+        return self.create_user(username_field, password, **extra_fields)
 
     def create_admin(self, username_field, password=None, **extra_fields):
         extra_fields.setdefault('is_admin', True)
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_active', True)
-        return self._create_user(username_field, password, **extra_fields)
+        return self.create_user(username_field, password, **extra_fields)
 
     def create_superuser(self, username_field, password, **extra_fields):
         extra_fields.setdefault('is_superuser', True)
@@ -35,7 +35,7 @@ class UserManager(BaseUserManager):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_active', True)
 
-        return self._create_user(username_field, password, **extra_fields)
+        return self.create_user(username_field, password, **extra_fields)
 
 
 class User(AbstractBaseUser, PermissionsMixin):
