@@ -9,7 +9,7 @@ from core import settings
 
 schema_view = get_schema_view(
     openapi.Info(
-        title='AMANAT API',
+        title='TEST API',
         default_version='v1',
     ),
     public=True,
